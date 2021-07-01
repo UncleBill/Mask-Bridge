@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/maskbridge/static/js/main.66e4e873.chunk.js",
+    "main.js": "/maskbridge/static/js/main.688737d5.chunk.js",
     "runtime-main.js": "/maskbridge/static/js/runtime-main.754ba10d.js",
-    "static/js/2.74432654.chunk.js": "/maskbridge/static/js/2.74432654.chunk.js",
+    "static/js/2.698fb298.chunk.js": "/maskbridge/static/js/2.698fb298.chunk.js",
     "index.html": "/maskbridge/index.html",
-    "static/js/2.74432654.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.74432654.chunk.js.LICENSE.txt",
+    "static/js/2.698fb298.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.698fb298.chunk.js.LICENSE.txt",
     "static/media/advanced.3f649a39.svg": "/maskbridge/static/media/advanced.3f649a39.svg",
     "static/media/blue-tick.31fdcebb.svg": "/maskbridge/static/media/blue-tick.31fdcebb.svg",
     "static/media/brige.58d2802a.svg": "/maskbridge/static/media/brige.58d2802a.svg",
@@ -30,7 +30,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.754ba10d.js",
-    "static/js/2.74432654.chunk.js",
-    "static/js/main.66e4e873.chunk.js"
+    "static/js/2.698fb298.chunk.js",
+    "static/js/main.688737d5.chunk.js"
   ]
 }
