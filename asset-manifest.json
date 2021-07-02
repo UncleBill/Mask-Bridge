@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/maskbridge/static/js/main.688737d5.chunk.js",
+    "main.js": "/maskbridge/static/js/main.c935e21e.chunk.js",
     "runtime-main.js": "/maskbridge/static/js/runtime-main.754ba10d.js",
     "static/js/2.698fb298.chunk.js": "/maskbridge/static/js/2.698fb298.chunk.js",
     "index.html": "/maskbridge/index.html",
@@ -17,7 +17,7 @@
     "static/media/drop-down.1ebb285d.svg": "/maskbridge/static/media/drop-down.1ebb285d.svg",
     "static/media/imtoken.bd139121.svg": "/maskbridge/static/media/imtoken.bd139121.svg",
     "static/media/info.bfa43a72.svg": "/maskbridge/static/media/info.bfa43a72.svg",
-    "static/media/loading.a6b37938.svg": "/maskbridge/static/media/loading.a6b37938.svg",
+    "static/media/loading.323a559c.svg": "/maskbridge/static/media/loading.323a559c.svg",
     "static/media/logo.9b825ebb.svg": "/maskbridge/static/media/logo.9b825ebb.svg",
     "static/media/metamask-fox.7db94670.svg": "/maskbridge/static/media/metamask-fox.7db94670.svg",
     "static/media/multiple-claim.35df3f33.svg": "/maskbridge/static/media/multiple-claim.35df3f33.svg",
@@ -31,6 +31,6 @@
   "entrypoints": [
     "static/js/runtime-main.754ba10d.js",
     "static/js/2.698fb298.chunk.js",
-    "static/js/main.688737d5.chunk.js"
+    "static/js/main.c935e21e.chunk.js"
   ]
 }
