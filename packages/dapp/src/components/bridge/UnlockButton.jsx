@@ -87,12 +87,12 @@ export const UnlockButton = () => {
     <Flex
       align="center"
       as="button"
-      color="cyan.500"
+      color="primary"
       _hover={
         buttonDisabled
           ? undefined
           : {
-              color: 'cyan.600',
+              color: 'primary',
             }
       }
       cursor={buttonDisabled ? 'not-allowed' : 'pointer'}

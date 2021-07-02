@@ -15,7 +15,7 @@ import React, { useCallback, useEffect } from 'react';
 
 export const BridgeDropdown = ({ close = () => {} }) => {
   const { bridgeDirection, setBridgeDirection } = useSettings();
-  const placement = useBreakpointValue({ base: 'bottom', md: 'bottom-end' });
+  const placement = useBreakpointValue({ base: 'top', md: 'top-end' });
 
   const setItem = useCallback(
     e => {
@@ -26,7 +26,7 @@ export const BridgeDropdown = ({ close = () => {} }) => {
   );
 
   const networkOptions = Object.keys(networks);
-  const isValidNetwork = Object.keys(networks).indexOf(bridgeDirection) >= 0;
+  const isValidNetwork = networkOptions.indexOf(bridgeDirection) >= 0;
 
   const currentBridgeDirection = isValidNetwork
     ? bridgeDirection

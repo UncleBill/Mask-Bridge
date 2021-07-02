@@ -70,6 +70,7 @@ export const theme = {
     greyText: '#75818D',
     modalBG: 'rgba(98, 118, 148, 0.9)',
     modalOpaqueBG: 'rgba(98, 118, 148, 1)',
+    primary: '#1C38C1',
   },
   fonts: {
     ...chakraTheme.fonts,

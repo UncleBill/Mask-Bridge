@@ -53,7 +53,7 @@ export const NoHistory = () => (
       No History Found
     </Text>
     <Link to="/">
-      <Button colorScheme="blue" mt={4}>
+      <Button bg="primary" colorScheme="blue" mt={4}>
         Make Transfer
       </Button>
     </Link>
