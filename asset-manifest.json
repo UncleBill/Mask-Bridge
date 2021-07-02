@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.js": "/maskbridge/static/js/main.c83fe392.chunk.js",
+    "main.js": "/maskbridge/static/js/main.59fb8051.chunk.js",
     "runtime-main.js": "/maskbridge/static/js/runtime-main.754ba10d.js",
-    "static/js/2.545962a0.chunk.js": "/maskbridge/static/js/2.545962a0.chunk.js",
+    "static/js/2.4ce3386b.chunk.js": "/maskbridge/static/js/2.4ce3386b.chunk.js",
     "index.html": "/maskbridge/index.html",
-    "static/js/2.545962a0.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.545962a0.chunk.js.LICENSE.txt",
+    "static/js/2.4ce3386b.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.4ce3386b.chunk.js.LICENSE.txt",
     "static/media/blue-tick.31fdcebb.svg": "/maskbridge/static/media/blue-tick.31fdcebb.svg",
     "static/media/brige.58d2802a.svg": "/maskbridge/static/media/brige.58d2802a.svg",
     "static/media/bsc-logo.358a42f2.png": "/maskbridge/static/media/bsc-logo.358a42f2.png",
     "static/media/change-network.e9dc3637.png": "/maskbridge/static/media/change-network.e9dc3637.png",
     "static/media/claim.7fa0652d.svg": "/maskbridge/static/media/claim.7fa0652d.svg",
     "static/media/confirm-transfer.3a6feef5.svg": "/maskbridge/static/media/confirm-transfer.3a6feef5.svg",
-    "static/media/imtoken.bd139121.svg": "/maskbridge/static/media/imtoken.bd139121.svg",
     "static/media/info.bfa43a72.svg": "/maskbridge/static/media/info.bfa43a72.svg",
     "static/media/loading.323a559c.svg": "/maskbridge/static/media/loading.323a559c.svg",
     "static/media/logo.9b825ebb.svg": "/maskbridge/static/media/logo.9b825ebb.svg",
@@ -24,7 +23,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.754ba10d.js",
-    "static/js/2.545962a0.chunk.js",
-    "static/js/main.c83fe392.chunk.js"
+    "static/js/2.4ce3386b.chunk.js",
+    "static/js/main.59fb8051.chunk.js"
   ]
 }
