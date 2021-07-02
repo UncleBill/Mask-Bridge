@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.js": "/maskbridge/static/js/main.c935e21e.chunk.js",
+    "main.js": "/maskbridge/static/js/main.f0baf49c.chunk.js",
     "runtime-main.js": "/maskbridge/static/js/runtime-main.754ba10d.js",
-    "static/js/2.698fb298.chunk.js": "/maskbridge/static/js/2.698fb298.chunk.js",
+    "static/js/2.f9755353.chunk.js": "/maskbridge/static/js/2.f9755353.chunk.js",
     "index.html": "/maskbridge/index.html",
-    "static/js/2.698fb298.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.698fb298.chunk.js.LICENSE.txt",
-    "static/media/advanced.3f649a39.svg": "/maskbridge/static/media/advanced.3f649a39.svg",
+    "static/js/2.f9755353.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.f9755353.chunk.js.LICENSE.txt",
     "static/media/blue-tick.31fdcebb.svg": "/maskbridge/static/media/blue-tick.31fdcebb.svg",
     "static/media/brige.58d2802a.svg": "/maskbridge/static/media/brige.58d2802a.svg",
     "static/media/bsc-logo.358a42f2.png": "/maskbridge/static/media/bsc-logo.358a42f2.png",
@@ -13,7 +12,6 @@
     "static/media/claim.7fa0652d.svg": "/maskbridge/static/media/claim.7fa0652d.svg",
     "static/media/confirm-transfer.3a6feef5.svg": "/maskbridge/static/media/confirm-transfer.3a6feef5.svg",
     "static/media/custom-token.3b52a027.svg": "/maskbridge/static/media/custom-token.3b52a027.svg",
-    "static/media/details.e09722cb.svg": "/maskbridge/static/media/details.e09722cb.svg",
     "static/media/drop-down.1ebb285d.svg": "/maskbridge/static/media/drop-down.1ebb285d.svg",
     "static/media/imtoken.bd139121.svg": "/maskbridge/static/media/imtoken.bd139121.svg",
     "static/media/info.bfa43a72.svg": "/maskbridge/static/media/info.bfa43a72.svg",
@@ -24,13 +22,12 @@
     "static/media/no-history.cc89800b.svg": "/maskbridge/static/media/no-history.cc89800b.svg",
     "static/media/right-arrow.59c7b3bf.svg": "/maskbridge/static/media/right-arrow.59c7b3bf.svg",
     "static/media/search.bf04c13d.svg": "/maskbridge/static/media/search.bf04c13d.svg",
-    "static/media/settings.c5079894.svg": "/maskbridge/static/media/settings.c5079894.svg",
     "static/media/transfer.ad082335.svg": "/maskbridge/static/media/transfer.ad082335.svg",
     "static/media/unlock.06c5d8ad.svg": "/maskbridge/static/media/unlock.06c5d8ad.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.754ba10d.js",
-    "static/js/2.698fb298.chunk.js",
-    "static/js/main.c935e21e.chunk.js"
+    "static/js/2.f9755353.chunk.js",
+    "static/js/main.f0baf49c.chunk.js"
   ]
 }
