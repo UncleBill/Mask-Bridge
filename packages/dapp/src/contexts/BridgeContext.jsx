@@ -287,7 +287,7 @@ export const BridgeProvider = ({ children }) => {
     ) {
       setShouldReceiveNativeCur(true);
     } else {
-      setShouldReceiveNativeCur(false);
+      setShouldReceiveNativeCur(false); 
     }
   }, [fromToken, toToken, setShouldReceiveNativeCur, foreignChainId]);
 
