@@ -29,9 +29,9 @@ export const GnosisSafeWarning = ({
           <AlertIcon minWidth="20px" />
           {noCheckbox && (
             <Text fontSize="small">
-              It is mandatory to set an alternative recipient address when
-              Omnibridge is loaded as a Gnosis Safe App. Usually this would be
-              the address of a Gnosis Safe on the other side of the bridge.
+              It is mandatory to set an alternative recipient address when Mask
+              Bridge is loaded as a Gnosis Safe App. Usually this would be the
+              address of a Gnosis Safe on the other side of the bridge.
             </Text>
           )}
           {isSameAddress && !noCheckbox && (
