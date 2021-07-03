@@ -13,15 +13,16 @@ import {
 } from '@chakra-ui/react';
 import InfoImage from 'assets/info.svg';
 import React, { useState } from 'react';
+import { storage } from 'utils';
 
 const SHOW_TERMS = 'show-terms';
 
 export const TermsOfServiceModal = () => {
-  const fromStorage = window.localStorage.getItem(SHOW_TERMS);
+  const fromStorage = storage.get(SHOW_TERMS);
 
-  const [isOpen, setOpen] = useState(fromStorage !== 'false');
+  const [isOpen, setOpen] = useState(fromStorage !== false);
   const onClose = () => {
-    window.localStorage.setItem(SHOW_TERMS, 'false');
+    storage.set(SHOW_TERMS, false);
     setOpen(false);
   };
 

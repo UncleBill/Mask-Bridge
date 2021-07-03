@@ -25,6 +25,7 @@ import {
 } from 'lib/helpers';
 import { fetchTokenDetails } from 'lib/token';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { storage } from 'utils';
 
 export const BridgeContext = React.createContext({});
 
@@ -133,7 +134,7 @@ export const BridgeProvider = ({ children }) => {
         setTokens({ fromToken: token, toToken: { ...token, ...gotToToken } });
         const label = getNetworkLabel(token.chainId).toUpperCase();
         const storageKey = `${bridgeDirection.toUpperCase()}-${label}-FROM-TOKEN`;
-        localStorage.setItem(storageKey, JSON.stringify(token));
+        storage.set(storageKey, token);
         return true;
       } catch (tokenDetailsError) {
         toast({

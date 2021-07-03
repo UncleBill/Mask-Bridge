@@ -26,6 +26,7 @@ import { LOCAL_STORAGE_KEYS } from 'lib/constants';
 import { logError, uniqueTokens } from 'lib/helpers';
 import { fetchTokenDetails } from 'lib/token';
 import React, { useRef, useState } from 'react';
+import { storage } from 'utils';
 
 const { CUSTOM_TOKENS } = LOCAL_STORAGE_KEYS;
 
@@ -52,7 +53,7 @@ export const CustomTokenModal = ({ isOpen, onClose, onBack }) => {
 
   const addCustomToken = async () => {
     setLoading(true);
-    let localTokensList = window.localStorage.getItem(CUSTOM_TOKENS);
+    let localTokensList = storage.get(CUSTOM_TOKENS);
     let customTokensList = [];
 
     if (!localTokensList) {
@@ -65,10 +66,7 @@ export const CustomTokenModal = ({ isOpen, onClose, onBack }) => {
       customTokensList.push(customToken);
     }
     customTokensList = uniqueTokens(customTokensList);
-    window.localStorage.setItem(
-      CUSTOM_TOKENS,
-      JSON.stringify(customTokensList),
-    );
+    storage.set(CUSTOM_TOKENS, customTokensList);
     await setToken(customToken);
     setLoading(false);
   };

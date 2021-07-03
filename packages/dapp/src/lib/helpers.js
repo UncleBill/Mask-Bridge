@@ -18,6 +18,7 @@ import {
   KOVAN_SOKOL_BRIDGE,
   networks,
 } from 'lib/networks';
+import { storage } from 'utils';
 
 import { getOverriddenMediator, isOverridden } from './overrides';
 
@@ -207,8 +208,7 @@ export const truncateText = (text, maxLength) => {
 export const getDefaultToken = (bridgeDirection, chainId) => {
   const label = getNetworkLabel(chainId).toUpperCase();
   const storageKey = `${bridgeDirection.toUpperCase()}-${label}-FROM-TOKEN`;
-  const tokenString = localStorage.getItem(storageKey);
-  const token = JSON.parse(tokenString);
+  const token = storage.get(storageKey);
   if (token && token.chainId === chainId) return token;
   return defaultTokens[bridgeDirection][chainId];
 };

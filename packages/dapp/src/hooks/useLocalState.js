@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { storage } from 'utils';
 
 export const useLocalState = (
   initialValue,
   key,
   { valueType = 'string', isStoredImmediately = false } = {},
 ) => {
-  const storageValue = useMemo(() => window.localStorage.getItem(key), [key]);
+  const storageValue = useMemo(() => storage.get(key), [key]);
   const castedValue = useMemo(() => {
     if (valueType === 'number') {
       return parseInt(storageValue, 10);
@@ -28,7 +29,7 @@ export const useLocalState = (
         setValue(result);
       }
       if ((!!isStoredImmediately || !!shouldBeStored) && !!key) {
-        window.localStorage.setItem(key, result);
+        storage.set(key, result);
       }
     },
     [key, value, isStoredImmediately],
@@ -40,7 +41,7 @@ export const useLocalState = (
 
   useEffect(() => {
     if (!!key && !storageValue) {
-      localStorage.setItem(key, initialValue);
+      storage.set(key, initialValue);
     }
   }, [key, initialValue, storageValue]);
 

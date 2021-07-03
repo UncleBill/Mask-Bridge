@@ -4,6 +4,7 @@ import { LARGEST_UINT256, LOCAL_STORAGE_KEYS } from 'lib/constants';
 import { logError } from 'lib/helpers';
 import { approveToken, fetchAllowance } from 'lib/token';
 import { useCallback, useEffect, useState } from 'react';
+import { storage } from 'utils';
 
 const { INFINITE_UNLOCK } = LOCAL_STORAGE_KEYS;
 
@@ -33,9 +34,7 @@ export const useApproval = (fromToken, fromAmount, txHash) => {
   const approve = useCallback(async () => {
     setUnlockLoading(true);
     const approvalAmount =
-      window.localStorage.getItem(INFINITE_UNLOCK) === 'true'
-        ? LARGEST_UINT256
-        : fromAmount;
+      storage.get(INFINITE_UNLOCK) === true ? LARGEST_UINT256 : fromAmount;
     try {
       const tx = await approveToken(ethersProvider, fromToken, approvalAmount);
       setApprovalTxHash(tx.hash);

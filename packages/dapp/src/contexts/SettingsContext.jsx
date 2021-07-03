@@ -4,6 +4,7 @@ import { fetchQueryParams, getRPCKeys } from 'lib/helpers';
 import { networks } from 'lib/networks';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { storage } from 'utils';
 
 const {
   INFINITE_UNLOCK,
@@ -102,13 +103,11 @@ export const SettingsProvider = ({ children }) => {
 
   useEffect(() => {
     if (
-      window.localStorage.getItem(homeRPCKey) !== homeRPC ||
-      window.localStorage.getItem(foreignRPCKey) !== foreignRPC ||
-      window.localStorage.getItem(NEVER_SHOW_CLAIMS) !==
-        neverShowClaims.toString() ||
-      window.localStorage.getItem(INFINITE_UNLOCK) !==
-        infiniteUnlock.toString() ||
-      window.localStorage.getItem(DISABLE_BALANCE_WHILE_TOKEN_FETCH) !==
+      storage.get(homeRPCKey) !== homeRPC ||
+      storage.get(foreignRPCKey) !== foreignRPC ||
+      storage.get(NEVER_SHOW_CLAIMS) !== neverShowClaims.toString() ||
+      storage.get(INFINITE_UNLOCK) !== infiniteUnlock.toString() ||
+      storage.get(DISABLE_BALANCE_WHILE_TOKEN_FETCH) !==
         disableBalanceFetchToken.toString()
     ) {
       setNeedsSaving(true);

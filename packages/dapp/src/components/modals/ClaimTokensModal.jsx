@@ -27,6 +27,7 @@ import {
 } from 'lib/gasPrice';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { storage } from 'utils';
 
 const { DONT_SHOW_CLAIMS } = LOCAL_STORAGE_KEYS;
 
@@ -38,16 +39,15 @@ export const ClaimTokensModal = () => {
 
   const onClose = () => {
     setOpen(false);
-    window.localStorage.setItem(DONT_SHOW_CLAIMS, 'true');
+    storage.set(DONT_SHOW_CLAIMS, true);
   };
 
   useEffect(() => {
-    window.localStorage.setItem(DONT_SHOW_CLAIMS, 'false');
+    storage.set(DONT_SHOW_CLAIMS, false);
   }, [account, providerChainId]);
 
   useEffect(() => {
-    const dontShowClaims =
-      window.localStorage.getItem(DONT_SHOW_CLAIMS) === 'true';
+    const dontShowClaims = storage.get(DONT_SHOW_CLAIMS) === true;
     setOpen(!!transfers && transfers.length > 0 && !dontShowClaims);
   }, [transfers]);
 
@@ -114,7 +114,7 @@ export const ClaimTokensModal = () => {
                 to="/history"
                 display="flex"
                 onClick={() => {
-                  window.localStorage.setItem('dont-show-claims', 'false');
+                  storage.set(DONT_SHOW_CLAIMS, false);
                 }}
               >
                 <Button

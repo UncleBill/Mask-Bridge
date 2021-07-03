@@ -34,6 +34,7 @@ import {
 import { fetchTokenBalanceWithProvider } from 'lib/token';
 import { fetchTokenList } from 'lib/tokenList';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { storage } from 'utils';
 
 const { CUSTOM_TOKENS } = LOCAL_STORAGE_KEYS;
 
@@ -142,11 +143,7 @@ export const TokenSelectorModal = ({ isOpen, onClose, onCustom }) => {
 
   useEffect(() => {
     if (!isOpen) return;
-    let localTokenList = window.localStorage.getItem(CUSTOM_TOKENS);
-    localTokenList =
-      !localTokenList || !localTokenList.length
-        ? []
-        : JSON.parse(localTokenList);
+    const localTokenList = storage.get(CUSTOM_TOKENS) ?? [];
     providerChainId && setDefaultTokenList(providerChainId, localTokenList);
   }, [isOpen, providerChainId, setDefaultTokenList]);
 
