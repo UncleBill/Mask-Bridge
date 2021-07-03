@@ -78,15 +78,5 @@ export const relayTokens = async (
     from: receiver,
     value: await mediatorContract.swapFee(),
   };
-
-  console.log('DEBUG: relay tokens')
-  console.log({
-    isHome,
-    amount,
-    token,
-    receiver,
-    overrides,
-  })
-
   return mediatorContract[isHome ? 'swapBSC2ETH' : 'swapETH2BSC'](token.address, amount, overrides);
 };
