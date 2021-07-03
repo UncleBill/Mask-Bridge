@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.js": "/maskbridge/static/js/main.7c957111.chunk.js",
-    "runtime-main.js": "/maskbridge/static/js/runtime-main.754ba10d.js",
-    "static/js/2.74e5f548.chunk.js": "/maskbridge/static/js/2.74e5f548.chunk.js",
-    "index.html": "/maskbridge/index.html",
-    "static/js/2.74e5f548.chunk.js.LICENSE.txt": "/maskbridge/static/js/2.74e5f548.chunk.js.LICENSE.txt",
-    "static/media/blue-tick.31fdcebb.svg": "/maskbridge/static/media/blue-tick.31fdcebb.svg",
-    "static/media/brige.58d2802a.svg": "/maskbridge/static/media/brige.58d2802a.svg",
-    "static/media/bsc-logo.358a42f2.png": "/maskbridge/static/media/bsc-logo.358a42f2.png",
-    "static/media/change-network.e9dc3637.png": "/maskbridge/static/media/change-network.e9dc3637.png",
-    "static/media/claim.7fa0652d.svg": "/maskbridge/static/media/claim.7fa0652d.svg",
-    "static/media/confirm-transfer.3a6feef5.svg": "/maskbridge/static/media/confirm-transfer.3a6feef5.svg",
-    "static/media/info.bfa43a72.svg": "/maskbridge/static/media/info.bfa43a72.svg",
-    "static/media/loading.323a559c.svg": "/maskbridge/static/media/loading.323a559c.svg",
-    "static/media/logo.9b825ebb.svg": "/maskbridge/static/media/logo.9b825ebb.svg",
-    "static/media/metamask-fox.7db94670.svg": "/maskbridge/static/media/metamask-fox.7db94670.svg",
-    "static/media/multiple-claim.35df3f33.svg": "/maskbridge/static/media/multiple-claim.35df3f33.svg",
-    "static/media/no-history.cc89800b.svg": "/maskbridge/static/media/no-history.cc89800b.svg",
-    "static/media/right-arrow.59c7b3bf.svg": "/maskbridge/static/media/right-arrow.59c7b3bf.svg",
-    "static/media/transfer.ad082335.svg": "/maskbridge/static/media/transfer.ad082335.svg",
-    "static/media/unlock.06c5d8ad.svg": "/maskbridge/static/media/unlock.06c5d8ad.svg"
+    "main.js": "/Mask-Bridge/static/js/main.d5d92a32.chunk.js",
+    "runtime-main.js": "/Mask-Bridge/static/js/runtime-main.142e948b.js",
+    "static/js/2.d62842ed.chunk.js": "/Mask-Bridge/static/js/2.d62842ed.chunk.js",
+    "index.html": "/Mask-Bridge/index.html",
+    "static/js/2.d62842ed.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.d62842ed.chunk.js.LICENSE.txt",
+    "static/media/blue-tick.31fdcebb.svg": "/Mask-Bridge/static/media/blue-tick.31fdcebb.svg",
+    "static/media/brige.58d2802a.svg": "/Mask-Bridge/static/media/brige.58d2802a.svg",
+    "static/media/bsc-logo.358a42f2.png": "/Mask-Bridge/static/media/bsc-logo.358a42f2.png",
+    "static/media/change-network.e9dc3637.png": "/Mask-Bridge/static/media/change-network.e9dc3637.png",
+    "static/media/claim.7fa0652d.svg": "/Mask-Bridge/static/media/claim.7fa0652d.svg",
+    "static/media/confirm-transfer.3a6feef5.svg": "/Mask-Bridge/static/media/confirm-transfer.3a6feef5.svg",
+    "static/media/info.bfa43a72.svg": "/Mask-Bridge/static/media/info.bfa43a72.svg",
+    "static/media/loading.323a559c.svg": "/Mask-Bridge/static/media/loading.323a559c.svg",
+    "static/media/logo.9b825ebb.svg": "/Mask-Bridge/static/media/logo.9b825ebb.svg",
+    "static/media/metamask-fox.7db94670.svg": "/Mask-Bridge/static/media/metamask-fox.7db94670.svg",
+    "static/media/multiple-claim.35df3f33.svg": "/Mask-Bridge/static/media/multiple-claim.35df3f33.svg",
+    "static/media/no-history.cc89800b.svg": "/Mask-Bridge/static/media/no-history.cc89800b.svg",
+    "static/media/right-arrow.59c7b3bf.svg": "/Mask-Bridge/static/media/right-arrow.59c7b3bf.svg",
+    "static/media/transfer.ad082335.svg": "/Mask-Bridge/static/media/transfer.ad082335.svg",
+    "static/media/unlock.06c5d8ad.svg": "/Mask-Bridge/static/media/unlock.06c5d8ad.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.754ba10d.js",
-    "static/js/2.74e5f548.chunk.js",
-    "static/js/main.7c957111.chunk.js"
+    "static/js/runtime-main.142e948b.js",
+    "static/js/2.d62842ed.chunk.js",
+    "static/js/main.d5d92a32.chunk.js"
   ]
 }
