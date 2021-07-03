@@ -1,7 +1,27 @@
 export const ETH_XDAI_BRIDGE = 'eth-xdai';
+export const ETH_BSC_BRIDGE = 'eth-bsc';
 export const BSC_XDAI_BRIDGE = 'bsc-xdai';
 export const KOVAN_SOKOL_BRIDGE = 'kovan-sokol';
-export const ETH_BSC_BRIDGE = 'eth-bsc';
+export const RINKEBY_BSCTEST_BRIDGE = 'rinkey-bsctest';
+
+const RINKEBY_BSCTEST_BRIDGE_CONFIG = {
+  label: 'rinkey⥊bsctest',
+  homeChainId: 4,
+  foreignChainId: 97,
+  enableReversedBridge: false,
+  enableForeignCurrencyBridge: false,
+  homeMediatorAddress:
+    '0xBfF86b0234CCe74FDCb9C8897b2e33f385dfA83D'.toLowerCase(),
+  foreignMediatorAddress:
+    '0xc01456454c10E8118BbD069edc8DcFa66bCCA96F'.toLowerCase(),
+  // TODO
+  foreignAmbAddress: '0x4C36d2919e407f0Cc2Ee3c993ccF8ac26d9CE64e'.toLowerCase(),
+  // TODO
+  homeAmbAddress: '0x75Df5AF045d91108662D8080fD1FEFAd6aA0bb59'.toLowerCase(),
+  foreignGraphName: 'raid-guild/mainnet-omnibridge',
+  homeGraphName: 'raid-guild/xdai-omnibridge',
+  ambLiveMonitorPrefix: 'https://alm-xdai.herokuapp.com',
+};
 
 const ETH_XDAI_BRIDGE_CONFIG = {
   label: 'eth⥊xdai',
@@ -61,9 +81,9 @@ const ETH_BSC_BRIDGE_CONFIG = {
   enableReversedBridge: true,
   enableForeignCurrencyBridge: true,
   foreignMediatorAddress:
-    '0x69c707d975e8d883920003CC357E556a4732CD03'.toLowerCase(),
+    '0xD25d84B989bFaFC2C77aB1d4FA1a04FC0eea9D24'.toLowerCase(), // the Mask Bridge Agent Address on ETH
   homeMediatorAddress:
-    '0xD83893F31AA1B6B9D97C9c70D3492fe38D24d218'.toLowerCase(),
+    '0x05ee315E407C21a594f807D61d6CC11306D1F149'.toLowerCase(), // the Mask Brdige Agent Address on BSC
   foreignAmbAddress: '0x07955be2967B655Cf52751fCE7ccC8c61EA594e2'.toLowerCase(),
   homeAmbAddress: '0x6943A218d58135793F1FE619414eD476C37ad65a'.toLowerCase(),
   foreignGraphName: 'maxaleks/mainnet-to-bsc-omnibridge',
@@ -80,6 +100,7 @@ const bridgeInfo = {
   [BSC_XDAI_BRIDGE]: BSC_XDAI_BRIDGE_CONFIG,
   [KOVAN_SOKOL_BRIDGE]: KOVAN_SOKOL_BRIDGE_CONFIG,
   [ETH_BSC_BRIDGE]: ETH_BSC_BRIDGE_CONFIG,
+  [RINKEBY_BSCTEST_BRIDGE]: RINKEBY_BSCTEST_BRIDGE_CONFIG,
 };
 
 const getNetworkConfig = bridges => {
@@ -92,48 +113,6 @@ const getNetworkConfig = bridges => {
 export const networks = getNetworkConfig(ENABLED_BRIDGES);
 
 export const defaultTokens = {
-  [ETH_XDAI_BRIDGE]: {
-    1: {
-      address: '0x0Ae055097C6d159879521C384F1D2123D1f195e6',
-      chainId: 1,
-      symbol: 'STAKE',
-      name: 'STAKE',
-    },
-    100: {
-      address: '0xb7D311E2Eb55F2f68a9440da38e7989210b9A05e',
-      chainId: 100,
-      symbol: 'STAKE',
-      name: 'STAKE on xDai',
-    },
-  },
-  [KOVAN_SOKOL_BRIDGE]: {
-    42: {
-      address: '0xFD2df5dCe4c89B007A43CF88d8161dAf1A17C7AB',
-      chainId: 42,
-      symbol: 'STAKE',
-      name: 'STAKE',
-    },
-    77: {
-      address: '0x408ec1bb883da0ea0fb3c955ea6befcd05aa7c3a',
-      chainId: 77,
-      symbol: 'STAKE',
-      name: 'STAKE on xDai',
-    },
-  },
-  [BSC_XDAI_BRIDGE]: {
-    56: {
-      address: '0x24e5CF4a0577563d4e7761D14D53C8D0b504E337',
-      chainId: 56,
-      symbol: 'STAKE',
-      name: 'STAKE on xDai on BSC',
-    },
-    100: {
-      address: '0xb7D311E2Eb55F2f68a9440da38e7989210b9A05e',
-      chainId: 100,
-      symbol: 'STAKE',
-      name: 'STAKE on xDai',
-    },
-  },
   [ETH_BSC_BRIDGE]: {
     1: {
       address: '0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074',
