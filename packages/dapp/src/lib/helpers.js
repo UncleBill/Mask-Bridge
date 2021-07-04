@@ -147,6 +147,7 @@ const {
   MAINNET_RPC_URL,
   ROPSTEN_RPC_URL,
   BSC_RPC_URL,
+  BSCTEST_RPC_URL,
   KOVAN_RPC_URL,
   SOKOL_RPC_URL,
 } = LOCAL_STORAGE_KEYS;
@@ -171,7 +172,7 @@ export const getRPCKeys = bridgeDirection => {
     case ROPSTEN_BSCTEST_BRIDGE:
       return {
         // TODO
-        homeRPCKey: MAINNET_RPC_URL,
+        homeRPCKey: BSCTEST_RPC_URL,
         foreignRPCKey: ROPSTEN_RPC_URL,
       };
     case KOVAN_SOKOL_BRIDGE:

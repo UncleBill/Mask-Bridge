@@ -12,13 +12,18 @@ export const useRequiredSignatures = (homeChainId, homeAmbAddress) => {
     const key = `${label}-REQUIRED-SIGNATURES`;
     const fetchVersion = async () => {
       const provider = await getEthersProvider(homeChainId);
+      console.log('provider', provider);
       await fetchRequiredSignatures(homeAmbAddress, provider)
         .then(res => {
+          debugger;
           const signatures = Number.parseInt(res.toString(), 10);
           setHomeRequiredSignatures(signatures);
           sessionStorage.setItem(key, signatures);
         })
-        .catch(versionError => logError({ versionError }));
+        .catch(versionError => {
+          debugger;
+          logError({ versionError });
+        });
       setFetching(false);
     };
     const version = sessionStorage.getItem(key);

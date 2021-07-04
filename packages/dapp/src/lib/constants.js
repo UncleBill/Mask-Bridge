@@ -179,7 +179,7 @@ export const LOCAL_STORAGE_KEYS = {
   ROPSTEN_RPC_URL: 'ropsten-rpc-url',
   XDAI_RPC_URL: 'xdai-rpc-url',
   BSC_RPC_URL: 'bsc-rpc-url',
-  BSCTEST_RPC_URL: 'bsctest-rpc-url',
+  BSCTEST_RPC_URL: 'bsctestnet-rpc-url',
   KOVAN_RPC_URL: 'kovan-rpc-url',
   SOKOL_RPC_URL: 'sokol-rpc-url',
   NEVER_SHOW_CLAIMS: 'never-show-claims',
