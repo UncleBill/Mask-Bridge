@@ -17,6 +17,7 @@ import {
   ETH_XDAI_BRIDGE,
   KOVAN_SOKOL_BRIDGE,
   networks,
+  ROPSTEN_BSCTEST_BRIDGE,
 } from 'lib/networks';
 
 import { getOverriddenMediator, isOverridden } from './overrides';
@@ -144,6 +145,7 @@ export const logDebug = error => {
 const {
   XDAI_RPC_URL,
   MAINNET_RPC_URL,
+  ROPSTEN_RPC_URL,
   BSC_RPC_URL,
   KOVAN_RPC_URL,
   SOKOL_RPC_URL,
@@ -165,6 +167,12 @@ export const getRPCKeys = bridgeDirection => {
       return {
         homeRPCKey: BSC_RPC_URL,
         foreignRPCKey: MAINNET_RPC_URL,
+      };
+    case ROPSTEN_BSCTEST_BRIDGE:
+      return {
+        // TODO
+        homeRPCKey: MAINNET_RPC_URL,
+        foreignRPCKey: ROPSTEN_RPC_URL,
       };
     case KOVAN_SOKOL_BRIDGE:
     default:

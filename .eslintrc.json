@@ -13,8 +13,7 @@
     "sort-imports": "off",
     "import/order": "off",
     "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "warn",
-    "no-console": "warn"
+    "simple-import-sort/exports": "warn"
   },
   "ignorePatterns": ["packages/subgraph/**"]
 }

@@ -65,20 +65,22 @@ export const nativeCurrencyMediators = {
 
 export const networkNames = {
   1: 'ETH Mainnet',
+  3: 'Ropsten',
   42: 'Kovan Testnet',
   56: 'Binance Smart Chain',
   77: 'Sokol Testnet',
+  97: 'BSC Testnet',
   100: 'xDai Chain',
 };
 
 export const networkLabels = {
   1: 'Mainnet',
   3: 'Ropsten',
-  4: 'Rinkeby',
   5: 'Görli',
   42: 'Kovan',
   56: 'BSC',
   77: 'Sokol',
+  97: 'BSC Testnet',
   100: 'xDai',
 };
 
@@ -107,10 +109,12 @@ export const networkCurrencies = {
 
 const {
   REACT_APP_MAINNET_RPC_URL,
+  REACT_APP_ROPSTEN_RPC_URL,
   REACT_APP_XDAI_RPC_URL,
   REACT_APP_SOKOL_RPC_URL,
   REACT_APP_KOVAN_RPC_URL,
   REACT_APP_BSC_RPC_URL,
+  REACT_APP_BSC_TESTNET_RPC_URL,
 } = process.env;
 
 export const chainUrls = {
@@ -119,6 +123,12 @@ export const chainUrls = {
     explorer: 'https://blockscout.com/eth/mainnet',
     chainId: 1,
     name: networkNames[1],
+  },
+  3: {
+    rpc: REACT_APP_ROPSTEN_RPC_URL.split(' '),
+    explorer: 'https://blockscout.com/eth/ropsten',
+    chainId: 3,
+    name: networkNames[3],
   },
   42: {
     rpc: REACT_APP_KOVAN_RPC_URL.split(' '),
@@ -137,6 +147,12 @@ export const chainUrls = {
     explorer: 'https://blockscout.com/poa/sokol',
     chainId: 77,
     name: networkNames[77],
+  },
+  97: {
+    rpc: REACT_APP_BSC_TESTNET_RPC_URL.split(' '),
+    explorer: 'https://testnet.bscscan.com/',
+    chainId: 97,
+    name: networkNames[97],
   },
   100: {
     rpc: REACT_APP_XDAI_RPC_URL.split(' '),
@@ -160,8 +176,10 @@ export const GRAPH_HEALTH_ENDPOINT =
 export const LOCAL_STORAGE_KEYS = {
   DONT_SHOW_CLAIMS: 'dont-show-claims',
   MAINNET_RPC_URL: 'mainnet-rpc-url',
+  ROPSTEN_RPC_URL: 'ropsten-rpc-url',
   XDAI_RPC_URL: 'xdai-rpc-url',
   BSC_RPC_URL: 'bsc-rpc-url',
+  BSCTEST_RPC_URL: 'bsctest-rpc-url',
   KOVAN_RPC_URL: 'kovan-rpc-url',
   SOKOL_RPC_URL: 'sokol-rpc-url',
   NEVER_SHOW_CLAIMS: 'never-show-claims',
