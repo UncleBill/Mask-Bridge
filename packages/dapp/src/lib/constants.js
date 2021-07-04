@@ -65,7 +65,7 @@ export const nativeCurrencyMediators = {
 
 export const networkNames = {
   1: 'ETH Mainnet',
-  3: 'Ropsten',
+  4: 'Rinkeby',
   42: 'Kovan Testnet',
   56: 'Binance Smart Chain',
   77: 'Sokol Testnet',
@@ -75,7 +75,7 @@ export const networkNames = {
 
 export const networkLabels = {
   1: 'Mainnet',
-  3: 'Ropsten',
+  4: 'Rinkeby',
   5: 'Görli',
   42: 'Kovan',
   56: 'BSC',
@@ -109,7 +109,7 @@ export const networkCurrencies = {
 
 const {
   REACT_APP_MAINNET_RPC_URL,
-  REACT_APP_ROPSTEN_RPC_URL,
+  REACT_APP_RINKEBY_RPC_URL,
   REACT_APP_XDAI_RPC_URL,
   REACT_APP_SOKOL_RPC_URL,
   REACT_APP_KOVAN_RPC_URL,
@@ -124,11 +124,11 @@ export const chainUrls = {
     chainId: 1,
     name: networkNames[1],
   },
-  3: {
-    rpc: REACT_APP_ROPSTEN_RPC_URL.split(' '),
-    explorer: 'https://blockscout.com/eth/ropsten',
-    chainId: 3,
-    name: networkNames[3],
+  4: {
+    rpc: REACT_APP_RINKEBY_RPC_URL.split(' '),
+    explorer: 'https://rinkeby.etherscan.io',
+    chainId: 4,
+    name: networkNames[4],
   },
   42: {
     rpc: REACT_APP_KOVAN_RPC_URL.split(' '),
@@ -176,7 +176,7 @@ export const GRAPH_HEALTH_ENDPOINT =
 export const LOCAL_STORAGE_KEYS = {
   DONT_SHOW_CLAIMS: 'dont-show-claims',
   MAINNET_RPC_URL: 'mainnet-rpc-url',
-  ROPSTEN_RPC_URL: 'ropsten-rpc-url',
+  RINKEBY_RPC_URL: 'rinkeby-rpc-url',
   XDAI_RPC_URL: 'xdai-rpc-url',
   BSC_RPC_URL: 'bsc-rpc-url',
   BSCTEST_RPC_URL: 'bsctestnet-rpc-url',

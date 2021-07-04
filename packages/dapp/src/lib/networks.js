@@ -2,7 +2,7 @@ export const ETH_XDAI_BRIDGE = 'eth-xdai';
 export const ETH_BSC_BRIDGE = 'eth-bsc';
 export const BSC_XDAI_BRIDGE = 'bsc-xdai';
 export const KOVAN_SOKOL_BRIDGE = 'kovan-sokol';
-export const ROPSTEN_BSCTEST_BRIDGE = 'ropsten-bsctest';
+export const RINKEBY_BSCTEST_BRIDGE = 'ropsten-bsctest';
 
 const ETH_XDAI_BRIDGE_CONFIG = {
   label: 'eth⥊xdai',
@@ -74,18 +74,18 @@ const ETH_BSC_BRIDGE_CONFIG = {
 
 const RINKEBY_BSCTEST_BRIDGE_CONFIG = {
   label: 'ropsten⥊bsctest',
-  homeChainId: 3,
-  foreignChainId: 97,
+  homeChainId: 97,
+  foreignChainId: 4,
   enableReversedBridge: false,
   enableForeignCurrencyBridge: false,
   foreignMediatorAddress:
-    '0xfd7F535F3268D5e4FB7f756a617f3B8616f5B03A'.toLowerCase(), // the Mask Bridge Agent Address on Ropsten
+    '0xBfF86b0234CCe74FDCb9C8897b2e33f385dfA83D'.toLowerCase(), // the Mask Bridge Agent Address on Rinkeby
   homeMediatorAddress:
-    '0x2eD9a5C8C13b93955103B9a7C167B67Ef4d568a3'.toLowerCase(), // the Mask Bridge Agent Address on BSC testnet
+    '0xc01456454c10E8118BbD069edc8DcFa66bCCA96F'.toLowerCase(), // the Mask Bridge Agent Address on BSC testnet
   // TODO
   foreignAmbAddress: '0x4C36d2919e407f0Cc2Ee3c993ccF8ac26d9CE64e'.toLowerCase(),
   // TODO
-  homeAmbAddress: '0x75Df5AF045d91108662D8080fD1FEFAd6aA0bb59'.toLowerCase(),
+  homeAmbAddress: '0x6943A218d58135793F1FE619414eD476C37ad65a'.toLowerCase(),
   foreignGraphName: 'raid-guild/mainnet-omnibridge',
   homeGraphName: 'raid-guild/xdai-omnibridge',
   ambLiveMonitorPrefix: 'https://alm-xdai.herokuapp.com',
@@ -100,7 +100,7 @@ const bridgeInfo = {
   [BSC_XDAI_BRIDGE]: BSC_XDAI_BRIDGE_CONFIG,
   [KOVAN_SOKOL_BRIDGE]: KOVAN_SOKOL_BRIDGE_CONFIG,
   [ETH_BSC_BRIDGE]: ETH_BSC_BRIDGE_CONFIG,
-  [ROPSTEN_BSCTEST_BRIDGE]: RINKEBY_BSCTEST_BRIDGE_CONFIG,
+  [RINKEBY_BSCTEST_BRIDGE]: RINKEBY_BSCTEST_BRIDGE_CONFIG,
 };
 
 const getNetworkConfig = bridges => {
@@ -127,12 +127,12 @@ export const defaultTokens = {
       name: 'Mask on BSC',
     },
   },
-  [ROPSTEN_BSCTEST_BRIDGE]: {
-    3: {
+  [RINKEBY_BSCTEST_BRIDGE]: {
+    4: {
       address: '0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074',
-      chainId: 3,
+      chainId: 4,
       symbol: 'Mask',
-      name: 'Mask Network on Ropsten',
+      name: 'Mask Network on Rinkeby',
     },
     97: {
       address: '0x2eD9a5C8C13b93955103B9a7C167B67Ef4d568a3',
