@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Mask-Bridge/static/js/main.9a083d63.chunk.js",
-    "runtime-main.js": "/Mask-Bridge/static/js/runtime-main.142e948b.js",
-    "static/js/2.d62842ed.chunk.js": "/Mask-Bridge/static/js/2.d62842ed.chunk.js",
+    "main.js": "/Mask-Bridge/static/js/main.781b018b.chunk.js",
+    "runtime-main.js": "/Mask-Bridge/static/js/runtime-main.f4c0ea3f.js",
+    "static/js/2.ed1614e8.chunk.js": "/Mask-Bridge/static/js/2.ed1614e8.chunk.js",
     "index.html": "/Mask-Bridge/index.html",
-    "static/js/2.d62842ed.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.d62842ed.chunk.js.LICENSE.txt",
+    "static/js/2.ed1614e8.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.ed1614e8.chunk.js.LICENSE.txt",
     "static/media/blue-tick.31fdcebb.svg": "/Mask-Bridge/static/media/blue-tick.31fdcebb.svg",
     "static/media/brige.58d2802a.svg": "/Mask-Bridge/static/media/brige.58d2802a.svg",
     "static/media/bsc-logo.358a42f2.png": "/Mask-Bridge/static/media/bsc-logo.358a42f2.png",
@@ -22,8 +22,8 @@
     "static/media/unlock.06c5d8ad.svg": "/Mask-Bridge/static/media/unlock.06c5d8ad.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.142e948b.js",
-    "static/js/2.d62842ed.chunk.js",
-    "static/js/main.9a083d63.chunk.js"
+    "static/js/runtime-main.f4c0ea3f.js",
+    "static/js/2.ed1614e8.chunk.js",
+    "static/js/main.781b018b.chunk.js"
   ]
 }
