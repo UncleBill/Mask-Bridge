@@ -116,7 +116,7 @@ const {
 export const chainUrls = {
   1: {
     rpc: REACT_APP_MAINNET_RPC_URL.split(' '),
-    explorer: 'https://blockscout.com/eth/mainnet',
+    explorer: 'https://etherscan.io',
     chainId: 1,
     name: networkNames[1],
   },

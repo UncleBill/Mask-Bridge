@@ -69,12 +69,8 @@ export const HistoryItem = ({
   },
   handleClaimError,
 }) => {
-  const {
-    foreignChainId,
-    getBridgeChainId,
-    getMonitorUrl,
-    enableForeignCurrencyBridge,
-  } = useBridgeDirection();
+  const { foreignChainId, getBridgeChainId, enableForeignCurrencyBridge } =
+    useBridgeDirection();
   const bridgeChainId = getBridgeChainId(chainId);
 
   const timestampString = new Date(
@@ -195,7 +191,7 @@ export const HistoryItem = ({
           </Text>
           <Link
             color="blue.500"
-            href={getMonitorUrl(chainId, sendingTx)}
+            href={`${getExplorerUrl(chainId)}/tx/${sendingTx}`}
             rel="noreferrer noopener"
             target="_blank"
             my="auto"
