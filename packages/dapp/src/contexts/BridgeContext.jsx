@@ -294,6 +294,10 @@ export const BridgeProvider = ({ children }) => {
   useEffect(() => {
     updateToken();
   }, [updateToken]);
+
+  useEffect(() => {
+    setToken(getDefaultToken(bridgeDirection, providerChainId));
+  }, [bridgeDirection, providerChainId])
   return (
     <BridgeContext.Provider
       value={{
