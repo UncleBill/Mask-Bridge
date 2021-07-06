@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Mask-Bridge/static/js/main.fc068bad.chunk.js",
+    "main.js": "/Mask-Bridge/static/js/main.61ce2a3d.chunk.js",
     "runtime-main.js": "/Mask-Bridge/static/js/runtime-main.f4c0ea3f.js",
-    "static/js/2.ed1614e8.chunk.js": "/Mask-Bridge/static/js/2.ed1614e8.chunk.js",
+    "static/js/2.a65c2ce7.chunk.js": "/Mask-Bridge/static/js/2.a65c2ce7.chunk.js",
     "index.html": "/Mask-Bridge/index.html",
-    "static/js/2.ed1614e8.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.ed1614e8.chunk.js.LICENSE.txt",
+    "static/js/2.a65c2ce7.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.a65c2ce7.chunk.js.LICENSE.txt",
     "static/media/blue-tick.31fdcebb.svg": "/Mask-Bridge/static/media/blue-tick.31fdcebb.svg",
     "static/media/brige.58d2802a.svg": "/Mask-Bridge/static/media/brige.58d2802a.svg",
     "static/media/bsc-logo.358a42f2.png": "/Mask-Bridge/static/media/bsc-logo.358a42f2.png",
@@ -23,7 +23,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f4c0ea3f.js",
-    "static/js/2.ed1614e8.chunk.js",
-    "static/js/main.fc068bad.chunk.js"
+    "static/js/2.a65c2ce7.chunk.js",
+    "static/js/main.61ce2a3d.chunk.js"
   ]
 }
