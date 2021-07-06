@@ -40,7 +40,7 @@ export const useBridgeDirection = () => {
   );
 
   const getExplorerUrl = useCallback((chainId, hash) => {
-    const explorer = chainUrls[chainId];
+    const { explorer } = chainUrls[chainId];
     return `${explorer}/tx/${hash}`;
   }, []);
 

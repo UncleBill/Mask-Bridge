@@ -42,8 +42,13 @@ import {
   getNetworkLabel,
   handleWalletError,
 } from 'lib/helpers';
-import { BSC_XDAI_BRIDGE } from 'lib/networks';
-import React, { useCallback, useEffect, useState } from 'react';
+import { BSC_XDAI_BRIDGE, networks } from 'lib/networks';
+import React, { useCallback, useState } from 'react';
+
+const getFee = bridgeDirection => {
+  const config = networks[bridgeDirection];
+  return config.fee;
+};
 
 export const ConfirmTransferModal = ({ isOpen, onClose }) => {
   const { isGnosisSafe, account } = useWeb3Context();
@@ -52,14 +57,6 @@ export const ConfirmTransferModal = ({ isOpen, onClose }) => {
     useBridgeDirection();
   const { receiver, fromToken, toToken, fromAmount, toAmount, transfer } =
     useBridgeContext();
-  const [fee, setFee] = useState(0);
-  useEffect(() => {
-    if (fromAmount.gt(0)) {
-      setFee(
-        ((Number(fromAmount) - Number(toAmount)) * 100) / Number(fromAmount),
-      );
-    }
-  }, [fromAmount, toAmount]);
 
   const smallScreen = useBreakpointValue({ base: true, md: false });
   const [isInflationWarningChecked, setInflationWarningChecked] =
@@ -201,7 +198,7 @@ export const ConfirmTransferModal = ({ isOpen, onClose }) => {
               </Flex>
             </Flex>
             <Flex align="center" fontSize="sm" justify="center" mt={4}>
-              {`Bridge Fees ${Number(fee.toFixed(3))}%`}
+              {`Bridge Fees ${getFee(bridgeDirection)}`}
             </Flex>
             <Divider color="#DAE3F0" my={4} />
             <Box w="100%" fontSize="sm" color={isHome ? 'black' : 'grey'}>
