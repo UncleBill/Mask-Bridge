@@ -21,7 +21,12 @@ export const UnlockButton = () => {
     approvalTxHash,
   } = useBridgeContext();
   const isRebaseToken = isRebasingToken(token);
-  const buttonDisabled = allowed || isRebaseToken || toAmountLoading;
+  const buttonDisabled =
+    allowed ||
+    isRebaseToken ||
+    toAmountLoading ||
+    amount.lte(0) ||
+    balance.lte(0);
   const toast = useToast();
   const showError = useCallback(
     msg => {
