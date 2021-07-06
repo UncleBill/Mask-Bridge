@@ -145,7 +145,7 @@ export const HistoryItem = ({
   const { symbol: tokenSymbol } =
     enableForeignCurrencyBridge && user === homeCurrencyHelperContract
       ? getNativeCurrency(foreignChainId)
-      : toToken;
+      : toToken ?? {};
 
   return (
     <Flex
@@ -165,7 +165,12 @@ export const HistoryItem = ({
         }}
         w="100%"
       >
-        <Flex align="center" justify="space-between" mb={{ base: 1, md: 0 }}>
+        <Flex
+          align="center"
+          justify="space-between"
+          mb={{ base: 1, md: 0 }}
+          px="2"
+        >
           <Text display={{ base: 'inline-block', md: 'none' }} color="greyText">
             Date
           </Text>
@@ -235,10 +240,10 @@ export const HistoryItem = ({
             <Text my="auto" textAlign="center">
               {`${formatUnits(
                 BigNumber.from(amount),
-                toToken.decimals,
+                toToken?.decimals,
               )} ${tokenSymbol}`}
             </Text>
-            <AddToMetamask token={toToken} ml="0.25rem" />
+            <AddToMetamask token={toToken ?? {}} ml="0.25rem" />
           </Flex>
         </Flex>
         {claimed ? (

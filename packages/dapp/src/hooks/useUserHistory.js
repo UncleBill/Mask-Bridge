@@ -1,11 +1,9 @@
 import { useWeb3Context } from 'contexts/Web3Context';
 import { useBridgeDirection } from 'hooks/useBridgeDirection';
-import {
-  combineRequestsWithExecutions,
-  getExecutions,
-  getRequests,
-} from 'lib/history';
+import { combineRequestsWithExecutions, getRequests } from 'lib/history';
 import { useEffect, useState } from 'react';
+
+const txSortFn = (a, b) => b.timestamp - a.timestamp;
 
 export const useUserHistory = () => {
   const { homeChainId, foreignChainId, getGraphEndpoint } =
@@ -25,28 +23,44 @@ export const useUserHistory = () => {
           getRequests(account, getGraphEndpoint(homeChainId)),
           getRequests(account, getGraphEndpoint(foreignChainId)),
         ]);
-      const [
-        { executions: homeExecutions },
-        { executions: foreignExecutions },
-      ] = await Promise.all([
-        getExecutions(getGraphEndpoint(homeChainId), foreignRequests),
-        getExecutions(getGraphEndpoint(foreignChainId), homeRequests),
-      ]);
       const homeTransfers = combineRequestsWithExecutions(
         homeRequests,
-        foreignExecutions,
+        foreignRequests,
         homeChainId,
-        foreignChainId,
       );
       const foreignTransfers = combineRequestsWithExecutions(
         foreignRequests,
-        homeExecutions,
+        homeRequests,
         foreignChainId,
-        homeChainId,
       );
-      const allTransfers = [...homeTransfers, ...foreignTransfers].sort(
-        (a, b) => b.timestamp - a.timestamp,
-      );
+      const homeList = homeTransfers.sort(txSortFn).map(homeTx => {
+        const matchTx = foreignTransfers.find(
+          tx => tx.txHash === homeTx.txHash,
+        );
+        return {
+          ...homeTx,
+          toToken: matchTx.fromToken,
+        };
+      });
+      const foreignList = foreignTransfers.map(foreignTx => {
+        const matchTx = foreignTransfers.find(
+          tx => tx.txHash === foreignTx.txHash,
+        );
+        return {
+          ...foreignTx,
+          toToken: matchTx.fromToken,
+        };
+      });
+      const filteredIds = [];
+      const allTransfers = [...homeList, ...foreignList]
+        .sort(txSortFn)
+        .filter(tx => {
+          if (filteredIds.includes(tx.sendingTx)) {
+            return false;
+          }
+          filteredIds.push(tx.sendingTx);
+          return true;
+        });
       if (isSubscribed) {
         setTransfers(allTransfers);
         setLoading(false);
