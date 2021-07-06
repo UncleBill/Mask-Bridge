@@ -1,4 +1,5 @@
 import { Flex } from '@chakra-ui/react';
+import { BridgeDropdown } from 'components/common/BridgeDropdown';
 import { ConnectWeb3 } from 'components/common/ConnectWeb3';
 import { Footer } from 'components/common/Footer';
 import { Header } from 'components/common/Header';
@@ -9,7 +10,7 @@ import { useBridgeDirection } from 'hooks/useBridgeDirection';
 import React, { useMemo } from 'react';
 
 export const Layout = ({ children }) => {
-  const { homeChainId, foreignChainId } = useBridgeDirection();
+  const { foreignChainId } = useBridgeDirection();
   const { account, providerChainId } = useWeb3Context();
   const { queryToken } = useSettings();
 
@@ -21,14 +22,8 @@ export const Layout = ({ children }) => {
       !!account &&
       !!providerChainId &&
       isQueryChainProvided &&
-      [homeChainId, foreignChainId].indexOf(providerChainId) >= 0,
-    [
-      account,
-      providerChainId,
-      isQueryChainProvided,
-      homeChainId,
-      foreignChainId,
-    ],
+      foreignChainId === providerChainId,
+    [account, providerChainId, isQueryChainProvided, foreignChainId],
   );
 
   return (
@@ -53,7 +48,14 @@ export const Layout = ({ children }) => {
         h="100%"
         position="relative"
       >
-        {valid ? children : <ConnectWeb3 />}
+        <Flex direction="column">
+          {account ? (
+            <Flex w="100%" justifyContent="flex-end" p="1rem">
+              <BridgeDropdown />
+            </Flex>
+          ) : null}
+          {valid ? children : <ConnectWeb3 />}
+        </Flex>
       </Flex>
       <Footer />
       <TermsOfServiceModal />

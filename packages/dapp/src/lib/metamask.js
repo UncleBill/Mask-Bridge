@@ -40,3 +40,15 @@ export const addChainToMetaMask = async ethereumChain => {
     ],
   });
 };
+
+export const switchToChain = async ethereumChain => {
+  const { chainId } = ethereumChain;
+  return window.ethereum.request({
+    method: 'wallet_switchEthereumChain',
+    params: [
+      {
+        chainId: `0x${chainId.toString(16)}`,
+      },
+    ],
+  });
+};

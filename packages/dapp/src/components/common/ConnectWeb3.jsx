@@ -19,7 +19,7 @@ import {
   handleWalletError,
   logError,
 } from 'lib/helpers';
-import { addChainToMetaMask } from 'lib/metamask';
+import { addChainToMetaMask, switchToChain } from 'lib/metamask';
 import React, { useCallback } from 'react';
 
 export const ConnectWeb3 = () => {
@@ -31,8 +31,7 @@ export const ConnectWeb3 = () => {
   } = useBridgeDirection();
   const { queryToken } = useSettings();
   const queryChainId = queryToken ? queryToken.chainId : null;
-  const { connectWeb3, loading, account, disconnect, ethersProvider } =
-    useWeb3Context();
+  const { connectWeb3, loading, account, ethersProvider } = useWeb3Context();
   const toast = useToast();
 
   const showError = useCallback(
@@ -49,12 +48,18 @@ export const ConnectWeb3 = () => {
     [toast],
   );
 
-  const addChain = useCallback(
+  const switchChain = useCallback(
     async chainId => {
-      await addChainToMetaMask({ chainId }).catch(metamaskError => {
+      try {
+        if (NON_ETH_CHAIN_IDS.includes(chainId)) {
+          await addChainToMetaMask({ chainId });
+        } else {
+          await switchToChain({ chainId });
+        }
+      } catch (metamaskError) {
         logError({ metamaskError });
         handleWalletError(metamaskError, showError);
-      });
+      }
     },
     [showError],
   );
@@ -65,9 +70,7 @@ export const ConnectWeb3 = () => {
       const isWalletMetamask =
         getWalletProviderName(ethersProvider) === 'metamask';
 
-      return isWalletMetamask &&
-        NON_ETH_CHAIN_IDS.includes(chainId) &&
-        connect ? (
+      return isWalletMetamask && connect ? (
         <Tooltip label={`Click to switch to ${networkName}`} position="auto">
           <Badge
             display="inline-flex"
@@ -79,7 +82,7 @@ export const ConnectWeb3 = () => {
             size="1"
             cursor="pointer"
             colorScheme="blue"
-            onClick={() => addChain(chainId)}
+            onClick={() => switchChain(chainId)}
           >
             <Image boxSize={5} src={MetamaskFox} mr={2} />
             {networkName}
@@ -98,7 +101,7 @@ export const ConnectWeb3 = () => {
         </Text>
       );
     },
-    [addChain, ethersProvider],
+    [switchChain, ethersProvider],
   );
 
   const renderBridgeLabel = useCallback(
@@ -127,8 +130,6 @@ export const ConnectWeb3 = () => {
     return (
       <Text color="greyText" mb={4} textAlign="center">
         To access the {renderBridgeLabel()} Mask Bridge, please switch to
-        {renderChain(homeChainId)}
-        or
         {renderChain(foreignChainId)}
       </Text>
     );
@@ -185,12 +186,12 @@ export const ConnectWeb3 = () => {
       )}
       {account && !loading ? (
         <Button
-          onClick={disconnect}
+          onClick={() => switchChain(foreignChainId)}
           colorScheme="blue"
           px={12}
           borderRadius={20}
         >
-          Disconnect
+          Switch to {getNetworkName(foreignChainId)}
         </Button>
       ) : (
         <Button

@@ -1,5 +1,6 @@
 export const ETH_XDAI_BRIDGE = 'eth-xdai';
 export const ETH_BSC_BRIDGE = 'eth-bsc';
+export const BSC_ETH_BRIDGE = 'bsc-eth';
 export const BSC_XDAI_BRIDGE = 'bsc-xdai';
 export const KOVAN_SOKOL_BRIDGE = 'kovan-sokol';
 export const RINKEBY_BSCTEST_BRIDGE = 'rinkey-bsctest';
@@ -75,7 +76,7 @@ const KOVAN_SOKOL_BRIDGE_CONFIG = {
 };
 
 const ETH_BSC_BRIDGE_CONFIG = {
-  label: 'eth⥊bsc',
+  label: 'eth⇀bsc',
   homeChainId: 56,
   foreignChainId: 1,
   enableReversedBridge: true,
@@ -91,6 +92,23 @@ const ETH_BSC_BRIDGE_CONFIG = {
   ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
 };
 
+const BSC_ETH_BRIDGE_CONFIG = {
+  label: 'bsc⇀eth',
+  homeChainId: 1,
+  foreignChainId: 56,
+  enableReversedBridge: true,
+  enableForeignCurrencyBridge: true,
+  foreignMediatorAddress:
+    '0x05ee315E407C21a594f807D61d6CC11306D1F149'.toLowerCase(), // the Mask Brdige Agent Address on BSC
+  homeMediatorAddress:
+    '0xD25d84B989bFaFC2C77aB1d4FA1a04FC0eea9D24'.toLowerCase(), // the Mask Bridge Agent Address on ETH
+  foreignAmbAddress: '0x6943A218d58135793F1FE619414eD476C37ad65a'.toLowerCase(),
+  homeAmbAddress: '0x07955be2967B655Cf52751fCE7ccC8c61EA594e2'.toLowerCase(),
+  foreignGraphName: 'maxaleks/bsc-to-mainnet-omnibridge',
+  homeGraphName: 'maxaleks/mainnet-to-bsc-omnibridge',
+  ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
+};
+
 const ENABLED_BRIDGES = process.env.REACT_APP_ENABLED_BRIDGES.split(' ').map(
   b => b.toLowerCase(),
 );
@@ -100,6 +118,7 @@ const bridgeInfo = {
   [BSC_XDAI_BRIDGE]: BSC_XDAI_BRIDGE_CONFIG,
   [KOVAN_SOKOL_BRIDGE]: KOVAN_SOKOL_BRIDGE_CONFIG,
   [ETH_BSC_BRIDGE]: ETH_BSC_BRIDGE_CONFIG,
+  [BSC_ETH_BRIDGE]: BSC_ETH_BRIDGE_CONFIG,
   [RINKEBY_BSCTEST_BRIDGE]: RINKEBY_BSCTEST_BRIDGE_CONFIG,
 };
 
@@ -125,6 +144,20 @@ export const defaultTokens = {
       chainId: 56,
       symbol: 'Mask',
       name: 'Mask on BSC',
+    },
+  },
+  [BSC_ETH_BRIDGE]: {
+    56: {
+      address: '0x2eD9a5C8C13b93955103B9a7C167B67Ef4d568a3',
+      chainId: 56,
+      symbol: 'Mask',
+      name: 'Mask on BSC',
+    },
+    1: {
+      address: '0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074',
+      chainId: 1,
+      symbol: 'Mask',
+      name: 'Mask Network',
     },
   },
 };
