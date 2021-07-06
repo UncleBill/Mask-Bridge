@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Mask-Bridge/static/js/main.ee4250ed.chunk.js",
+    "main.js": "/Mask-Bridge/static/js/main.d70aedd8.chunk.js",
     "runtime-main.js": "/Mask-Bridge/static/js/runtime-main.f4c0ea3f.js",
-    "static/js/2.92b5b335.chunk.js": "/Mask-Bridge/static/js/2.92b5b335.chunk.js",
+    "static/js/2.bb0a5d24.chunk.js": "/Mask-Bridge/static/js/2.bb0a5d24.chunk.js",
     "index.html": "/Mask-Bridge/index.html",
-    "static/js/2.92b5b335.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.92b5b335.chunk.js.LICENSE.txt",
+    "static/js/2.bb0a5d24.chunk.js.LICENSE.txt": "/Mask-Bridge/static/js/2.bb0a5d24.chunk.js.LICENSE.txt",
     "static/media/blue-tick.31fdcebb.svg": "/Mask-Bridge/static/media/blue-tick.31fdcebb.svg",
     "static/media/brige.58d2802a.svg": "/Mask-Bridge/static/media/brige.58d2802a.svg",
     "static/media/bsc-logo.358a42f2.png": "/Mask-Bridge/static/media/bsc-logo.358a42f2.png",
@@ -15,7 +15,6 @@
     "static/media/loading.323a559c.svg": "/Mask-Bridge/static/media/loading.323a559c.svg",
     "static/media/logo.9b825ebb.svg": "/Mask-Bridge/static/media/logo.9b825ebb.svg",
     "static/media/metamask-fox.7db94670.svg": "/Mask-Bridge/static/media/metamask-fox.7db94670.svg",
-    "static/media/multiple-claim.35df3f33.svg": "/Mask-Bridge/static/media/multiple-claim.35df3f33.svg",
     "static/media/no-history.cc89800b.svg": "/Mask-Bridge/static/media/no-history.cc89800b.svg",
     "static/media/right-arrow.59c7b3bf.svg": "/Mask-Bridge/static/media/right-arrow.59c7b3bf.svg",
     "static/media/transfer.ad082335.svg": "/Mask-Bridge/static/media/transfer.ad082335.svg",
@@ -23,7 +22,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f4c0ea3f.js",
-    "static/js/2.92b5b335.chunk.js",
-    "static/js/main.ee4250ed.chunk.js"
+    "static/js/2.bb0a5d24.chunk.js",
+    "static/js/main.d70aedd8.chunk.js"
   ]
 }
