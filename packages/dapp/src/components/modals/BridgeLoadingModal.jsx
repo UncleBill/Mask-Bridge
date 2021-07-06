@@ -11,11 +11,9 @@ import {
 import BlueTickImage from 'assets/blue-tick.svg';
 import LoadingImage from 'assets/loading.svg';
 import { ProgressRing } from 'components/common/ProgressRing';
-import { ClaimTokensModal } from 'components/modals/ClaimTokensModal';
 import { ClaimTransferModal } from 'components/modals/ClaimTransferModal';
 import { NeedsConfirmationModal } from 'components/modals/NeedsConfirmationModal';
 import { useBridgeContext } from 'contexts/BridgeContext';
-import { useSettings } from 'contexts/SettingsContext';
 import { useWeb3Context } from 'contexts/Web3Context';
 import { useBridgeDirection } from 'hooks/useBridgeDirection';
 import { useTransactionStatus } from 'hooks/useTransactionStatus';
@@ -149,18 +147,12 @@ export const BridgeLoadingModal = () => {
     }
   }, [chainId, homeChainId]);
 
-  const { neverShowClaims, needsSaving } = useSettings();
   const txNeedsClaiming =
     !!message && !!txHash && !loading && chainId === foreignChainId;
 
   const claimTransfer = txNeedsClaiming ? (
     <ClaimTransferModal message={message} setMessage={setMessage} />
   ) : null;
-
-  const claimAllTokens =
-    txNeedsClaiming || neverShowClaims || needsSaving ? null : (
-      <ClaimTokensModal />
-    );
 
   const loader = needsConfirmation ? (
     <NeedsConfirmationModal
@@ -181,7 +173,6 @@ export const BridgeLoadingModal = () => {
 
   return (
     <>
-      {claimAllTokens}
       {claimTransfer}
       {loader}
     </>
