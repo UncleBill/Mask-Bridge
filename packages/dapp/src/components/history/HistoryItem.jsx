@@ -219,6 +219,7 @@ export const HistoryItem = ({
               rel="noreferrer noopener"
               target="_blank"
               my="auto"
+              title={receivingTx}
               textAlign="center"
             >
               {shortenHash(receivingTx)}

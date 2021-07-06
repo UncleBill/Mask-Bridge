@@ -33,6 +33,7 @@ const requestsUserQuery = gql`
         symbol
         decimals
       }
+      filledBy: filled_by
     }
   }
 `;
@@ -68,6 +69,7 @@ const requestsRecipientQuery = gql`
         symbol
         decimals
       }
+      filledBy: filled_by
     }
   }
 `;
@@ -119,7 +121,7 @@ export const combineRequestsWithExecutions = (
       chainId,
       timestamp: req.timestamp,
       sendingTx: req.txHash,
-      receivingTx: matchTx?.txHash,
+      receivingTx: matchTx?.filledBy,
       status: !!matchTx,
       amount: req.amount,
       fromToken: req.fromToken,
