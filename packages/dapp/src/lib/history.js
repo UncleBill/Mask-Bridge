@@ -119,7 +119,7 @@ export const combineRequestsWithExecutions = (
       chainId,
       timestamp: req.timestamp,
       sendingTx: req.txHash,
-      receivingTx: matchTx.txHash,
+      receivingTx: matchTx?.txHash,
       status: !!matchTx,
       amount: req.amount,
       fromToken: req.fromToken,
