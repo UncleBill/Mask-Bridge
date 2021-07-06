@@ -1,7 +1,7 @@
 import { BigNumber, Contract } from 'ethers';
 import { delay } from 'lib/helpers';
 
-import { defaultTokens, networks } from './networks';
+import { BSC_ETH_BRIDGE, defaultTokens, networks } from './networks';
 
 const fetchToTokenDetails = async (bridgeDirection, fromToken, toChainId) => {
   const {
@@ -65,9 +65,7 @@ export const relayTokens = async (
   { shouldReceiveNativeCur, foreignChainId },
 ) => {
   const signer = ethersProvider.getSigner();
-  const { homeChainId } = networks[bridgeDirection];
-  const isHome = token.chainId === homeChainId;
-
+  const isBSC2ETH = bridgeDirection === BSC_ETH_BRIDGE;
   const abi = [
     'function swapFee() view returns (uint256)',
     'function swapBSC2ETH(address erc20Addr, uint256 amount) public payable returns (bool)',
@@ -78,5 +76,9 @@ export const relayTokens = async (
     from: receiver,
     value: await mediatorContract.swapFee(),
   };
-  return mediatorContract[isHome ? 'swapBSC2ETH' : 'swapETH2BSC'](token.address, amount, overrides);
+  return mediatorContract[isBSC2ETH ? 'swapBSC2ETH' : 'swapETH2BSC'](
+    token.address,
+    amount,
+    overrides,
+  );
 };
