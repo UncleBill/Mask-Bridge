@@ -1,6 +1,7 @@
 import { useSettings } from 'contexts/SettingsContext';
 import { useAmbVersion } from 'hooks/useAmbVersion';
 import { useRequiredSignatures } from 'hooks/useRequiredSignatures';
+import { chainUrls } from 'lib/constants';
 import { networks } from 'lib/networks';
 import { useCallback, useMemo } from 'react';
 
@@ -38,6 +39,11 @@ export const useBridgeDirection = () => {
     [ambLiveMonitorPrefix],
   );
 
+  const getExplorerUrl = useCallback((chainId, hash) => {
+    const explorer = chainUrls[chainId];
+    return `${explorer}/tx/${hash}`;
+  }, []);
+
   const getGraphEndpoint = useCallback(
     chainId => {
       const subgraphName =
@@ -56,6 +62,7 @@ export const useBridgeDirection = () => {
     bridgeDirection,
     getBridgeChainId,
     getMonitorUrl,
+    getExplorerUrl,
     getGraphEndpoint,
     getAMBAddress,
     foreignAmbVersion,

@@ -33,7 +33,7 @@ const BridgeLoader = ({
   txHash,
   confirmations,
   totalConfirms,
-  getMonitorUrl,
+  getExplorerUrl,
   fromToken,
 }) => (
   <Modal
@@ -102,9 +102,9 @@ const BridgeLoader = ({
                     {`${loadingText || 'Waiting for Block Confirmations'}...`}
                   </Text>
                   <Text width="100%" color="grey">
-                    {'Monitor at ALM '}
+                    {'Monitor at '}
                     <Link
-                      href={getMonitorUrl(fromToken.chainId, txHash)}
+                      href={getExplorerUrl(fromToken.chainId, txHash)}
                       rel="noreferrer noopener"
                       target="_blank"
                       color="blue.500"
@@ -133,7 +133,7 @@ const BridgeLoader = ({
 
 export const BridgeLoadingModal = () => {
   const { providerChainId: chainId } = useWeb3Context();
-  const { getMonitorUrl, homeChainId, foreignChainId } = useBridgeDirection();
+  const { getExplorerUrl, homeChainId, foreignChainId } = useBridgeDirection();
   const { loading, fromToken, txHash, totalConfirms } = useBridgeContext();
   const [message, setMessage] = useState();
   const {
@@ -174,7 +174,7 @@ export const BridgeLoadingModal = () => {
       confirmations={confirmations}
       totalConfirms={totalConfirms}
       fromToken={fromToken}
-      getMonitorUrl={getMonitorUrl}
+      getExplorerUrl={getExplorerUrl}
       txHash={txHash}
     />
   );

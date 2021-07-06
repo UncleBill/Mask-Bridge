@@ -23,7 +23,7 @@ const getTransactionString = hash => {
 };
 
 export const LoadingModal = ({ loadingText, txHash, chainId }) => {
-  const { getMonitorUrl } = useBridgeDirection();
+  const { getExplorerUrl } = useBridgeDirection();
   const { providerChainId } = useWeb3Context();
   const { loading } = useBridgeContext();
   return (
@@ -81,9 +81,12 @@ export const LoadingModal = ({ loadingText, txHash, chainId }) => {
                   >
                     <Text width="100%">{`${loadingText}...`}</Text>
                     <Text width="100%" color="grey">
-                      {'Monitor at ALM '}
+                      Monitor at
                       <Link
-                        href={getMonitorUrl(chainId || providerChainId, txHash)}
+                        href={getExplorerUrl(
+                          chainId || providerChainId,
+                          txHash,
+                        )}
                         rel="noreferrer noopener"
                         target="_blank"
                         color="blue.500"
