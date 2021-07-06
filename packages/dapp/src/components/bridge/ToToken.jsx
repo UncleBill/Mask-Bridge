@@ -204,7 +204,12 @@ export const ToToken = () => {
                 <Spinner color="black" size="sm" />
               </Box>
             ) : (
-              <Text fontWeight="bold" fontSize="2xl">
+              <Text
+                fontWeight="bold"
+                fontSize="2xl"
+                overflow="hidden"
+                textOverflow="ellipsis"
+              >
                 {utils.formatUnits(amount, token.decimals)}
               </Text>
             )}
