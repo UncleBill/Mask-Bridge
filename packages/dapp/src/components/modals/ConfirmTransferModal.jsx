@@ -26,7 +26,6 @@ import {
   InflationaryTokenWarning,
   isInflationaryToken,
 } from 'components/warnings/InflationaryTokenWarning';
-import { MedianGasWarning } from 'components/warnings/MedianGasWarning';
 import { NeedsTransactionsWarning } from 'components/warnings/NeedsTransactionsWarning';
 import {
   isRebasingToken,
@@ -37,7 +36,6 @@ import { useBridgeContext } from 'contexts/BridgeContext';
 import { useWeb3Context } from 'contexts/Web3Context';
 import { useBridgeDirection } from 'hooks/useBridgeDirection';
 import { ADDRESS_ZERO } from 'lib/constants';
-import { getGasPrice, getMedianHistoricalEthGasPrice } from 'lib/gasPrice';
 import {
   formatValue,
   getAccountString,
@@ -96,8 +94,6 @@ export const ConfirmTransferModal = ({ isOpen, onClose }) => {
   const fromUnit = fromToken.symbol;
   const toAmt = formatValue(toAmount, toToken.decimals);
   const toUnit = toToken.symbol;
-  const currentGasPrice = getGasPrice();
-  const medianGasPrice = getMedianHistoricalEthGasPrice();
 
   const isERC20Dai =
     !!fromToken &&
@@ -229,13 +225,6 @@ export const ConfirmTransferModal = ({ isOpen, onClose }) => {
           </ModalBody>
           <ModalFooter p={6} flexDirection="column">
             {isHome && <NeedsTransactionsWarning noShadow />}
-            {foreignChainId === 1 && medianGasPrice.lt(currentGasPrice) && (
-              <MedianGasWarning
-                medianPrice={medianGasPrice}
-                currentPrice={currentGasPrice}
-                noShadow
-              />
-            )}
             {isERC20Dai && <DaiWarning noShadow />}
             {showReverseBridgeWarning && <ReverseWarning noShadow />}
             {showBinancePeggedAssetWarning && (
